@@ -22,7 +22,8 @@ describe('Requirement 06 - Testing <Pokemon.js /> component', () => {
     expect(pokemonImage).toHaveAttribute('src', 'https://cdn2.bulbagarden.net/upload/b/b2/Spr_5b_025_m.png');
   });
 
-  test('If the Pokémon card indicated in the Pokédex contains a navigation link to view details of that Pokémon', () => {
+  test('If the Pokémon card indicated in the Pokédex contains a navigation link'
+    + 'to view details of that Pokémon', () => {
     renderWithRouter(<Pokemon pokemon={ pokemons[0] } isFavorite={ false } />);
     const detailsLink = screen.getByRole('link', {
       name: /more details/i,
@@ -30,7 +31,8 @@ describe('Requirement 06 - Testing <Pokemon.js /> component', () => {
     expect(detailsLink).toHaveAttribute('href', `/pokemons/${pokemons[0].id}`);
   });
 
-  test('If clicking on the Pokémon navigation link redirects the application to the Pokémon details page', () => {
+  test('If clicking on the Pokémon navigation link redirects the application'
+    + 'to the Pokémon details page', () => {
     const { history } = renderWithRouter(<App />);
     const detailsLink = screen.getByRole('link', {
       name: /more details/i,

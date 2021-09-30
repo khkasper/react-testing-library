@@ -2,15 +2,16 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderWithRouter from './utils/renderWithRouter';
-import PokemonDetails from '../components/PokemonDetails';
 import App from '../App';
 import pokemons from '../data';
 
 describe('Requirement 07 - Testing <PokemonDetails.js /> component', () => {
-  test('If the detailed information of the selected Pokémon is shown on the screen', () => {
+  const MORE_DETAILS = 'More details';
+  test('If the detailed information of the selected Pokémon'
+    + 'is shown on the screen', () => {
     renderWithRouter(<App />);
     const detailsLink = screen.getByRole('link', {
-      name: 'More details',
+      name: MORE_DETAILS,
     });
     userEvent.click(detailsLink);
     const nameDetails = screen.getByRole('heading', {
@@ -28,10 +29,11 @@ describe('Requirement 07 - Testing <PokemonDetails.js /> component', () => {
     expect(pokemonSummary).toBeInTheDocument();
   });
 
-  test('If there is a section on the page with maps containing the Pokémons locations', () => {
+  test('If there is a section on the page with maps'
+    + 'containing the Pokémons locations', () => {
     renderWithRouter(<App />);
     const detailsLink = screen.getByRole('link', {
-      name: 'More details',
+      name: MORE_DETAILS,
     });
     userEvent.click(detailsLink);
     const gameLocations = screen.getByRole('heading', {
@@ -50,7 +52,7 @@ describe('Requirement 07 - Testing <PokemonDetails.js /> component', () => {
   test('If the user can bookmark a Pokémon through the details page', () => {
     renderWithRouter(<App />);
     const detailsLink = screen.getByRole('link', {
-      name: 'More details',
+      name: MORE_DETAILS,
     });
     userEvent.click(detailsLink);
     const checkbox = screen.getByRole('checkbox');

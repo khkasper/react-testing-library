@@ -15,7 +15,8 @@ describe('Requirement 05 - Testing <Pokedex.js /> component', () => {
     expect(title).toBeInTheDocument();
   });
 
-  test('If the next Pokémon in the list is displayed when "Próximo pokémon" button is clicked', () => {
+  test('If the next Pokémon in the list is displayed'
+    + 'when "Próximo pokémon" button is clicked', () => {
     renderWithRouter(<App />);
     const button = screen.getByRole('button', {
       name: 'Próximo pokémon',
@@ -38,7 +39,8 @@ describe('Requirement 05 - Testing <Pokedex.js /> component', () => {
     const allTypesButton = screen.getByRole('button', {
       name: 'All',
     });
-    const pokemonType = ['Electric', 'Fire', 'Bug', 'Poison', 'Psychic', 'Normal', 'Dragon'];
+    const pokemonType = ['Electric', 'Fire', 'Bug',
+      'Poison', 'Psychic', 'Normal', 'Dragon'];
     pokemonType.forEach((type) => {
       const pokemonTypeButton = screen.getByRole('button', {
         name: type,
@@ -48,7 +50,8 @@ describe('Requirement 05 - Testing <Pokedex.js /> component', () => {
     expect(allTypesButton).toBeInTheDocument();
   });
 
-  test('If clicking on a type button, the Pokédex only cycle through the Pokémon of that type', () => {
+  test('If clicking on a type button,'
+    + 'the Pokédex only cycle through the Pokémon of that type', () => {
     renderWithRouter(<App />);
     const pokemonTypeButton = screen.getAllByTestId('pokemon-type-button');
     const pokemonType = screen.getByTestId('pokemon-type');

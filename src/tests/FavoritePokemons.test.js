@@ -4,7 +4,8 @@ import renderWithRouter from './utils/renderWithRouter';
 import FavoritePokemons from '../components/FavoritePokemons';
 
 describe('Requirement 03 - Testing <FavoritePokemons.js /> component', () => {
-  test('If the message "No favorite pokemon found" is displayed on the screen, if there is no favorite pokemons', () => {
+  test('If the message "No favorite pokemon found" is displayed on the screen,'
+    + 'if there is no favorite pokemons', () => {
     renderWithRouter(<FavoritePokemons />);
     const noFavoritePokemons = screen.getByText('No favorite pokemon found');
     expect(noFavoritePokemons).toBeInTheDocument();
